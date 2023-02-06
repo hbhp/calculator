@@ -1,19 +1,30 @@
-const add = function(a, b) {
-	console.log(a+b);
-};
-
-const subtract = function(a, b) {
-	console.log (a-b);
-};
-
-const divide = function(a ,b){
-    console.log(a/b);
+const add = function (a,b){
+    return a+b;
 }
 
-const multiply = function(args) {
-  let total = 1;
-  for (let i = 0; i < args.length; i++){
-    total *= args[i];
-  }
-  console.log(parseFloat(total));
+const subtract = function (a,b){
+    return a-b;
+}
+
+const divide = function (a,b){
+    return a/b;
+}
+
+const multiply = function (a,b){
+    return a*b;
+}
+
+const operate = function(a, b, operation) {
+    let a = null;
+    let b = null; 
+    switch(operation) {
+        case '+':
+            return add(a,b) 
+        case '-':
+            return subtract(a,b)
+        case '÷':
+            return divide (a,b)
+        case 'x':
+           return multiply (a,b)
+    }
 }

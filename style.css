@@ -1,0 +1,76 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+}
+#banner{
+    height: 100px;
+    width: auto;
+}
+#body{
+    display: flex;
+    width: auto;
+    justify-content: center;
+}
+#footer{
+    height: 20px;
+    width: auto;
+}
+#footer{
+    height: 100px;
+    width: auto;
+}
+#calc{
+    display: flex;
+    flex-direction: column;
+    border: 2px black solid;
+    border-radius: 10px;
+    height: 525px;
+    width: 400px;
+    background-color: darkgrey;
+
+}
+#screenArea{
+    width: auto;
+    height: 100px;
+    margin: 20px;
+    border: 2px black solid;
+    background-color: rgb(231, 227, 227);
+    border-radius: 10px;
+
+}
+#screen{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+#numberButtons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#numB{
+    height: 60px;
+    width: 80px;
+    margin: 7px;
+    background-color: rgb(231, 227, 227);
+
+}
+#deleteButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#delB{
+    height: 60px;
+    width: 173px;
+    margin: 7px;
+    background-color: rgb(112, 185, 216);
+}
+button {
+    border-radius: 10px;
+    border: 2px black solid;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
