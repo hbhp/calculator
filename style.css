@@ -53,16 +53,16 @@ body{
     align-items: center;
 }
 
-#numB{
+.numB{
     height: 60px;
     width: 80px;
     margin: 7px;
     background-color: rgb(231, 227, 227);
 }
-#numB:hover{
+.numB:hover{
     background-color: rgb(190, 182, 182);
 }
-#numB:active{
+.numB:active{
     background-color: rgb(160, 158, 158);
 }
 
