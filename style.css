@@ -42,8 +42,6 @@ body{
     background-color: rgb(231, 227, 227);
     border-radius: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-right: 10px;
-    padding-top: -20px;
 }
 
 #calculating{
@@ -53,13 +51,16 @@ body{
     
 }
 
-#val1, #val2, #operator{
+#val1, #val2, #operation{
     border: 10px;
     font-size: x-large;
+    margin-right: 10px;
+    margin-bottom: -20px;
+    
 }
 
 #answer{
-    margin: 0;
+    margin-right: 10px;
     font-size: xx-large;
 
 }
