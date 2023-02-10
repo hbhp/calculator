@@ -53,16 +53,16 @@ body{
     align-items: center;
 }
 
-.numB{
+.numB, .equals, .operator, .decimal{
     height: 60px;
     width: 80px;
     margin: 7px;
     background-color: rgb(231, 227, 227);
 }
-.numB:hover{
+.numB:hover, .equals:hover, .operator:hover, .decimal:hover{
     background-color: rgb(190, 182, 182);
 }
-.numB:active{
+.numB:active, .equals:active, .operator:active, .decimal:active{
     background-color: rgb(160, 158, 158);
 }
 

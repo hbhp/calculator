@@ -1,13 +1,23 @@
-let val1 = ""
-let val2 = ""
-let answer = 0
+let val1 = "";
+let val2 = "";
+let operation = "";
+let answer = 0;
 
-const buttons = document.querySelectorAll('button.numB'); 
-buttons.forEach((button) => {
+const numbers = document.querySelectorAll('button.numB'); 
+numbers.forEach((button) => {
     button.addEventListener('click', (e) => {
-        val1 += e.target.innerText
+        val1 += e.target.innerText;
         document.getElementById('val1').innerHTML = val1;
     });
+});
+
+const operators = document.querySelectorAll('button.operator')
+operators.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        operation = e.target.innerText;
+        console.log(e.target.innerText);
+        document.getElementById('operation').innerHTML = operation
+        });
 });
 
 const equals = document.querySelectorAll('button.equals'); 
