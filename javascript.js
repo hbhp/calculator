@@ -1,7 +1,12 @@
-const buttons = document.querySelectorAll('button.numB'); //Returns numeric values and operations - Currently within the console
+let val1 = ""
+let val2 = ""
+
+const buttons = document.querySelectorAll('button.numB'); 
+
 buttons.forEach((button) => {
-  button.addEventListener('click', (e) => {
-   console.log(e.target.innerText)
+    button.addEventListener('click', (e) => {
+        val1 += e.target.innerText
+        console.log(val1)           //CURRENTLY GOING TO CONSOLE - REMEMBER TO 'RETURN'
     });
 });
 
