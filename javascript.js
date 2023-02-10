@@ -1,61 +1,163 @@
 let val1 = "";
 let val2 = "";
+let whichSum = 0;
 let operation = "";
 let answer = 0;
+
+function roundedAnswer(answer){
+    if(answer % 1 != 0){
+        console.log('hi');
+        return answer.toFixed(3);
+    }
+    else {
+        console.log('hi2')
+        return answer
+    }
+    }
+
+    
 
 const numbers = document.querySelectorAll('button.numB'); 
 numbers.forEach((button) => {
     button.addEventListener('click', (e) => {
-        val1 += e.target.innerText;
-        document.getElementById('val1').innerHTML = val1;
+        if (whichSum === 0){
+            if (val1.includes(".") && e.target.innerText === '.'){
+                ;
+            }
+            else{
+            if (val1 === "" && e.target.innerText === '.'){
+                    val1 = "0."
+                    document.getElementById('val1').innerHTML = val1;
+                    }
+                    else{
+                val1 += e.target.innerText;
+                document.getElementById('val1').innerHTML = val1;
+                console.log(val1);
+                    }       
+                }
+        } else if (whichSum > 0){
+            if (val2.includes(".") && e.target.innerText === '.'){
+                ;
+            }
+            else{
+            if (val2 === "" && e.target.innerText === '.'){
+                val2 = "0"
+            }else{
+            }
+            val2 += e.target.innerText;
+            document.getElementById('val2').innerHTML = val2
+            console.log(val2)
+            }}})
     });
-});
 
 const operators = document.querySelectorAll('button.operator')
 operators.forEach((button) => {
     button.addEventListener('click', (e) => {
+        whichSum++;
         operation = e.target.innerText;
         console.log(e.target.innerText);
         document.getElementById('operation').innerHTML = operation
-        });
+        if (val1 != "" & val2 !=""){    
+            if (operation === '÷' && val2 === "0"){
+                alert('To infinity and beyond ')
+            }
+            else if (operation === '÷'){
+                let answer = parseFloat(val1)/parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            }
+            else if (operation === 'x'){
+                let answer = parseFloat(val1)*parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            }
+            else if (operation === '-'){
+                let answer = parseFloat(val1)-parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            } else if (operation === '+'){
+                let answer = parseFloat(val1)+parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            } else{
+            }
+        }
+        else{}
+
+    });
 });
 
 const equals = document.querySelectorAll('button.equals'); 
 equals.forEach((button) => {
     button.addEventListener('click', (e) => {
-//        answer = val1                             LINE OF CODE WHICH RUNS THE EQUATION
-        document.getElementById('val1').innerHTML = 'The answer!';
-    });
+            if (operation === '÷' && val2 === "0"){
+                alert('To infinity and beyond ')
+            }
+            else if (operation === '÷'){
+                let answer = parseFloat(val1)/parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            }
+            else if (operation === 'x'){
+                let answer = parseFloat(val1)*parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            }
+            else if (operation === '-'){
+                let answer = parseFloat(val1)-parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                console.log(parseFloat(val1)-parseFloat(val2))
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            } else if (operation === '+'){
+                let answer = parseFloat(val1)+parseFloat(val2);
+                document.getElementById('answer').innerHTML = roundedAnswer(answer);
+                console.log(parseFloat(val1)+parseFloat(val2))
+                val1 = roundedAnswer(answer);
+                document.getElementById('val1').innerHTML = val1;
+                val2 = ""
+            } else{
+            }
+        }
+    )});
+    
+const clear = document.querySelectorAll('button.clear'); 
+clear.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        val1 = "";
+        val2 = "";
+        whichSum = 0;
+        operation = "";
+        answer = 0;
+        document.getElementById('answer').innerHTML = "";
+        document.getElementById('operation').innerHTML = "";
+        document.getElementById('val1').innerHTML = "";
+        document.getElementById('val2').innerHTML = "";
+        });
 });
 
-
-const add = function (a,b){
-    return a+b;
-}
-
-const subtract = function (a,b){
-    return a-b;
-}
-
-const divide = function (a,b){
-    return a/b;
-}
-
-const multiply = function (a,b){
-    return a*b;
-}
-
-const operate = function(a, b, operation) {
-    // let a = null;
-    // let b = null; 
-    switch(operation) {
-        case '+':
-            return add(a,b) 
-        case '-':
-            return subtract(a,b)
-        case '÷':
-            return divide (a,b)
-        case 'x':
-           return multiply (a,b)
-    }
-}
+const del = document.querySelectorAll('button.del'); 
+del.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        if (whichSum === 0){
+            val1 = val1.slice(0, - 1)
+            document.getElementById('val1').innerHTML = val1;
+        } else if (whichSum > 0){
+            val2 = val2.slice(0, - 1)
+            document.getElementById('val2').innerHTML = val2;
+        }
+    })
+});;
