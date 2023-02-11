@@ -6,16 +6,12 @@ let answer = 0;
 
 function roundedAnswer(answer){
     if(answer % 1 != 0){
-        console.log('hi');
         return answer.toFixed(3);
     }
     else {
-        console.log('hi2')
         return answer
     }
     }
-
-    
 
 const numbers = document.querySelectorAll('button.numB'); 
 numbers.forEach((button) => {
@@ -39,7 +35,10 @@ numbers.forEach((button) => {
             if (val2.includes(".") && e.target.innerText === '.'){
                 ;
             }
-            else{
+            else if (operator = ""){
+                ;
+            }
+            else{  
             if (val2 === "" && e.target.innerText === '.'){
                 val2 = "0"
             }else{
@@ -67,6 +66,8 @@ operators.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             }
             else if (operation === 'x'){
                 let answer = parseFloat(val1)*parseFloat(val2);
@@ -74,6 +75,8 @@ operators.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             }
             else if (operation === '-'){
                 let answer = parseFloat(val1)-parseFloat(val2);
@@ -81,12 +84,16 @@ operators.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             } else if (operation === '+'){
                 let answer = parseFloat(val1)+parseFloat(val2);
                 document.getElementById('answer').innerHTML = roundedAnswer(answer);
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             } else{
             }
         }
@@ -107,6 +114,8 @@ equals.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             }
             else if (operation === 'x'){
                 let answer = parseFloat(val1)*parseFloat(val2);
@@ -114,6 +123,8 @@ equals.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             }
             else if (operation === '-'){
                 let answer = parseFloat(val1)-parseFloat(val2);
@@ -122,6 +133,8 @@ equals.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             } else if (operation === '+'){
                 let answer = parseFloat(val1)+parseFloat(val2);
                 document.getElementById('answer').innerHTML = roundedAnswer(answer);
@@ -129,6 +142,8 @@ equals.forEach((button) => {
                 val1 = roundedAnswer(answer);
                 document.getElementById('val1').innerHTML = val1;
                 val2 = ""
+                document.getElementById('operation').innerHTML = "";
+                document.getElementById('val2').innerHTML = "";
             } else{
             }
         }

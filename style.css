@@ -54,15 +54,17 @@ body{
 #val1, #val2, #operation{
     border: 10px;
     font-size: x-large;
-    margin-right: 10px;
     margin-bottom: -20px;
-    
+    text-align: right;
+}
+
+#val2{
+    margin-right: 20px;
 }
 
 #answer{
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: xx-large;
-
 }
 
 #numberButtons{
